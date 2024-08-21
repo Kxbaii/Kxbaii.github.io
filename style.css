@@ -7,11 +7,16 @@
 
 body{
     background-color: #252626;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-top: 3vw;
     width: 100vw;
 }
@@ -42,10 +47,12 @@ a{
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+}
+.navA{
     scale: 1;
     transition: scale 0.5s ease;
 }
-a:hover{
+.navA:hover{
     scale: 1.05;
 }
 .IconText{
@@ -53,9 +60,48 @@ a:hover{
     font-size: 1.6vh;
     color: #87d2f6;
     font-weight: 500;
-    margin-top: 0.3vh;
+    margin-top: 0.6vh;
 }
 .logo:hover {
     transform: rotate(360deg);  
     cursor: pointer;
+}
+main{
+    height: 37vh;
+}
+.Ratings, .RatingsContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.RatingsText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70vh;
+}
+.RateTitle{
+    text-align: center;
+    font-size: 3vh;
+    color: #87d2f6;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+.RateDesc{
+    font-size: 2vh;
+    color: #87d2f6;
+    font-weight: 300;
+    margin-top: 0.7vh;
+    text-wrap: wrap;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 720px) {
+.RatingsText{
+    width: 45vh;
+}
+
 }
