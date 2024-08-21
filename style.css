@@ -24,7 +24,7 @@ header{
 nav{
     display: flex;
     justify-content: space-between;
-    width: 9vw;
+    width: 18vh;
     align-items: end;
 }
 .logo{
@@ -32,7 +32,7 @@ nav{
     transition: transform 1s ease;  
 }
 .navIcon{
-    width: 2.5vw;
+    width: 5vh;
     height: auto;
 }
 a{
@@ -50,7 +50,7 @@ a:hover{
 }
 .IconText{
     all: unset;
-    font-size: .8vw;
+    font-size: 1.6vh;
     color: #87d2f6;
     font-weight: 500;
     margin-top: 0.3vh;
