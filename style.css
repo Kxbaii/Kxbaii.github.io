@@ -109,7 +109,7 @@ main{
     width: fit-content;
     padding-left: 2vw;
     padding-right: 2vw;
-    margin-top: 5vh;
+    margin-top: 4vh;
     
     
 }
@@ -171,7 +171,7 @@ width: 100%;
     font-size: 1.6vh ;
 }
 .rank{
-    color: rgba(255, 255, 255, 0.5);
+    color: #87d2f6;
     font-weight: 300;
     font-size: 1.4vh ;
 }
