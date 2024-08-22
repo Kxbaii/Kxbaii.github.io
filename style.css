@@ -73,7 +73,9 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
 .RatingsText{
     display: flex;
     justify-content: center;
@@ -98,10 +100,96 @@ main{
     text-align: center;
 }
 
+.RatingTiles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-top: 5vh;
+    
+    
+}
+.RatingTile{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+    width: 45vh;
+    height: 28vh;
+    border-radius: 10px;
+    padding: 2vh;
+    flex-direction: column;
+    border: 1px solid rgba(102, 102, 102, 0.384);
+justify-content: space-between;
+align-items: center;
+}
+.RatingTile2{
+    display: flex;
+    justify-content: center;
+    background-color: #161616;
+    width: 45vh;
+    height: 28vh;
+    border-radius: 10px;
+    padding: 2vh;
+    margin-right: 1.5vh;
+    margin-left: 1.5vh;
+    flex-direction: column;
+    border: 1px solid rgba(102, 102, 102, 0.384);
+justify-content: space-between;
+align-items: center;
+}
+.TileContent{
+    color: rgba(255, 255, 255, 0.973);
+    font-weight: 400;
+    font-size: 1.6vh;
+    line-height: 2.6vh;
+}
+.TileContent2{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+width: 100%;
+}
+.Avatar{
+    width: 5vh;
+    background: red;
+    border-radius: 100%;
+}
+.TileText{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 1.5vh;
+}
+.Nickname{
+    color: rgba(255, 255, 255, 0.945);
+    font-weight: 400;
+    font-size: 1.6vh ;
+}
+.rank{
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    font-size: 1.4vh ;
+}
 
 @media only screen and (max-width: 720px) {
 .RatingsText{
     width: 45vh;
 }
-
+}
+@media only screen and (max-width: 1210px) {
+.RatingTile2{
+    margin-right: 0;
+    margin-left: 0;
+}
+.RatingTiles{
+    justify-content: center;
+}
+.RatingTile, .RatingTile2{
+    margin-top: 1vh;
+}
 }
