@@ -11,13 +11,14 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 header{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 3vw;
+    padding-top: 3vh;
     width: 100vw;
 }
 .contentHead{
@@ -66,16 +67,16 @@ a{
     transform: rotate(360deg);  
     cursor: pointer;
 }
-main{
-    height: 37vh;
-}
+
 .Ratings, .RatingsContent{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
+.Ratings{
+    margin-top: 3vh;
+}
 .RatingsText{
     display: flex;
     justify-content: center;
@@ -185,6 +186,55 @@ width: 100%;
     font-weight: 300;
     font-size: 1.4vh ;
 }
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    padding-bottom: 3vh;
+    flex-direction: column;
+}
+.gradient{
+    margin-top: 4vh;
+    width: 90%;
+    background: rgb(37,38,38);
+    background: linear-gradient(90deg, rgba(37,38,38,1) 0%, rgba(87,87,87,1) 30%, rgba(87,87,87,1) 70%, rgba(37,38,38,1) 100%);
+height: 3px;
+font-size: 0;
+}
+.Stats{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    width: 80vw;
+    margin-top: 5vh;
+    align-items: start;
+}
+.StatPhoto{
+    width: 13vh;
+}
+
+.StatNumber{
+    color: #87d2f6;
+    margin-top: 1vh;
+    text-align: center;
+    font-size: 7vh;
+}
+.StatDesc{
+    color: white;
+    font-weight: 200;
+    font-size: 2vh;
+    text-align: center;
+}
+.stat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vh;
+    padding: .5vh;
+}
+
 
 @media only screen and (max-width: 720px) {
 .RatingsText{
@@ -200,6 +250,14 @@ width: 100%;
         flex-direction: column;
         justify-content: space-between;
         width: 90vw;
+    }
+    .Stats{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        width: 100vw;
+        margin-top: 10vh;
+        align-items: start;
     }
 }
 
