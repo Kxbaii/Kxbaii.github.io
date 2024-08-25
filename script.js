@@ -25,6 +25,6 @@ const animateCounter = (elementId, start, end, duration) => {
 };
 
 // Start the animation for each counter
-animateCounter('People', 1, 2000, 3000);
-animateCounter('Sales', 1, 200, 3500);
-animateCounter('Trust', 1, 30, 4000);
+animateCounter('People', 1, 2000, 2000);
+animateCounter('Sales', 1, 200, 2500);
+animateCounter('Trust', 1, 30, 3000);
