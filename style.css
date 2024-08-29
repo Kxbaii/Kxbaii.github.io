@@ -3,58 +3,87 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-}
 
+}
 body{
-    background-color: #252626;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    background-image:url(files/bg.svg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-color:transparent;
     overflow-x: hidden;
 }
+.normal{margin-bottom: -8px; width: 100%}.reversed{margin-top: -8px;transform:rotate(180deg);width:100%;}
 
 header{
+    position: fixed;
+    top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
+    padding-left: 4vh;
     padding-top: 3vh;
+    padding-bottom: 3vh;
+    height: 12vh;
     width: 100vw;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
 }
 .contentHead{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90vw;
+    width: 50vw;
+}
+.secondpart{
+    width: 50vw;
+    display: flex;
+    justify-content: end;
+    padding-right: 5vw;
 }
 nav{
     display: flex;
     justify-content: space-between;
-    width: 18vh;
-    align-items: end;
+    align-items: center;
+    width: 50%;
+    padding-left: 3vw;
 }
+.anav{
+all: unset;
+color: white;
+cursor: pointer;
+font-size: 2.3vh;
+}
+.deco {
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding-bottom: 10px;
+  }
+.deco::after {
+    margin-top: 5px;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.30s ease-out;
+  }
+  
+  .deco:hover::after {
+    margin-top: 5px;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 .logo{
     width: 8vh;
     transition: transform 1s ease;  
-}
-.navIcon{
-    width: 5vh;
-    height: auto;
-}
-a{
-    all: unset;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-.navA{
-    scale: 1;
-    transition: scale 0.5s ease;
-}
-.navA:hover{
-    scale: 1.05;
 }
 .IconText{
     all: unset;
@@ -67,241 +96,280 @@ a{
     transform: rotate(360deg);  
     cursor: pointer;
 }
-
-.Ratings, .RatingsContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.Ratings{
-    margin-top: 3vh;
-}
-.RatingsText{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50vw;
-}
-.RateTitle{
-    text-align: center;
-    font-size: 3vh;
-    color: #87d2f6;
+.discordinvite{
+    all: unset;
+    background-color: #0097b2;
+    padding: 1.3vh 3vh;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #252626;
     font-weight: 600;
-    margin-bottom: 1vh;
+    border: #0097b2 2px solid;
+    padding-top: -3vh;
+    transition: color 0.5s ease, background-color 0.5s ease;
 }
-.RateDesc{
-    font-size: 2vh;
-    color: #87d2f6;
-    font-weight: 300;
-    margin-top: 0.7vh;
-    text-wrap: wrap;
-    text-align: center;
-}
+.discordinvite:hover{
+    all: unset;
+    padding: 1.3vh 3vh;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #0097b2;
+    font-weight: 600;
+    border: #0097b2 2px solid;
+    padding-top: -3vh;
+    transition: color 0.5s ease, background-color 0.5s ease;
 
-.RatingTiles{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin-top: 4vh;
-    
-    
 }
-.RatingTile{
-    display: flex;
-    justify-content: center;
-    background-color: #161616;
-    width: 45vh;
-    height: 28vh;
-    border-radius: 10px;
-    padding: 2vh;
-    flex-direction: column;
-    border: 1px solid rgba(102, 102, 102, 0.384);
-justify-content: space-between;
-align-items: center;
-margin: .4rem;
-}
-.RatingTile2{
-    display: flex;
-    justify-content: center;
-    background-color: #161616;
-    width: 45vh;
-    height: 28vh;
-    border-radius: 10px;
-    padding: 2vh;
-    flex-direction: column;
-    border: 1px solid rgba(102, 102, 102, 0.384);
-justify-content: space-between;
-align-items: center;
-}
-.TileContent{
-    color: rgba(255, 255, 255, 0.973);
-    font-weight: 300;
-    font-size: 1.5vh;
-    line-height: 2.2vh;
-}
-.TileContent2{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-
-width: 100%;
-}
-.Avatar{
-    width: 5vh;
-    background: rgb(255, 255, 255);
-    border-radius: 100%;
-}
-#lux{
-    background: lightpink;
-}
-#lar{
-    background: #FF5733;
-}
-#jay{
-    background: rgb(255, 255, 118);
-}
-#shark{
-    background: rgb(255, 205, 111);
-}
-.TileText{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 1.5vh;
-}
-.Nickname{
-    color: rgba(255, 255, 255, 0.945);
-    font-weight: 400;
-    font-size: 1.6vh ;
-}
-.rank{
-    color: #87d2f6;
-    font-weight: 300;
-    font-size: 1.4vh ;
-}
-main{
+.main{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80vw;
-    padding-bottom: 3vh;
-    flex-direction: column;
-}
-.gradient{
-    margin-top: 4vh;
-    width: 90%;
-    background: rgb(37,38,38);
-    background: linear-gradient(90deg, rgba(37,38,38,1) 0%, rgba(87,87,87,1) 30%, rgba(87,87,87,1) 70%, rgba(37,38,38,1) 100%);
-height: 3px;
-font-size: 0;
-}
-.Stats{
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    width: 80vw;
-
-    align-items: start;
-
-}
-.StatPhoto{
-    width: 13vh;
-}
-
-.StatNumber{
-    color: #87d2f6;
-    margin-top: 1vh;
-    text-align: center;
-    font-size: 7vh;
-}
-.StatDesc{
-    color: white;
-    font-weight: 200;
-    font-size: 2vh;
-    text-align: center;
-}
-.stat{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50vw;
-    padding: .5vh;
-}
-
-
-@media only screen and (max-width: 720px) {
-.RatingsText{
-    width: 45vh;
-}
-.Stats{
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
+    height: 105vh;
     width: 100vw;
-    align-items: center;
+    background-color: #252626;
+    background-image: url(files/siusiaak.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    flex-direction: column;
+    justify-content: space-around;
 }
-.stat{
+.mainText{
+    color: white;
+    font-size: 8vh;
+    font-weight: 600;
+    text-align: center;
+}
+.secondText{
+    color: #0097b2;
+    font-size: 2.2vh;
+    font-weight: 300;
+    text-align: center;
+}
+.more{
+    all: unset;
+    background-color: #0097b2;
+    color: white;
+    margin-top: 3vh;
+    padding: 1.5vh 3vh;
+    border-radius: 8px;
+    cursor: pointer;
+    border: #0097b2 2px solid;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+.more:hover{
+    all: unset;
+    color: white;
+    margin-top: 3vh;
+    padding: 1.5vh 3vh;
+    border-radius: 8px;
+    cursor: pointer;
+    border: #0097b2 2px solid;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+.maincontent{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 25vh;
     flex-direction: column;
-    width: 51vw;
-    padding: 1vh;
-}
+    justify-content: space-around;
 }
 
-@media only screen and (max-width:1000px){
-    .RatingsText{
+#products{
+    height: 100vh;
+    background-color: #252626;
+}
+
+@media only screen and (max-width: 1300px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 55%;
+        padding-left: 3vw;
+    }
+}
+@media only screen and (max-width: 1200px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 60%;
+        padding-left: 2vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
+        width: 60vw;
+    }
+    .secondpart{
+        width: 40vw;
+        display: flex;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+        padding-left: 4vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
+        width: 65vw;
+    }
+    .anav{
+        font-size: 2vh;
+    }
+    .secondpart{
+        width: 35vw;
+        display: flex;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+    .maincontent{
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 25vh;
+        width: 90vw;
         flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    nav{
+        display: flex;
         justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        padding-left: 4vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
+        width: 65vw;
+    }
+    .secondpart{
+        width: 35vw;
+        display: flex;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+}
+
+@media only screen and (max-width: 630px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-left: 5vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
+        width: 70vw;
+    }
+    .secondpart{
+        width: 0vw;
+        display: flex;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+    .discordinvite{
+        visibility: hidden;
+    }
+    .mainText{
+        color: white;
+        font-size: 6vh;
+        font-weight: 600;
+        text-align: center;
+    }
+    .secondText{
+        color: #0097b2;
+        font-size: 2vh;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 520px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-left: 5vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
+        width: 80vw;
+    }
+    .secondpart{
+        width: 0vw;
+        display: flex;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+    .discordinvite{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-width: 450px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-left: 5vw;
+    }
+    .anav{
+        font-size: 2vh;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
         width: 90vw;
     }
-    .Stats{
+    .secondpart{
+        width: 0vw;
         display: flex;
-        justify-content: center;
-        justify-content: space-around;
+        justify-content: end;
+        padding-right: 5vw;
+    }
+    .discordinvite{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-width: 400px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-left: 7vw;
+    }
+    .contentHead{
+        display: flex;
+        align-items: center;
         width: 100vw;
-        align-items: start;
-        flex-wrap: wrap;
-        margin-top: 3vh;
     }
-    .StatNumber{
-        color: #87d2f6;
-        margin-top: 1vh;
-        text-align: center;
-        font-size: 5vh;
-    }
-}
-@media only screen and (min-width: 1211px) {
-    .Stats{
+    .secondpart{
+        width: 0vw;
         display: flex;
-        justify-content: center;
-        justify-content: space-around;
-        width: 80vw;
-        align-items: start;
-        margin-top: 6vh;
-    } 
-}
-@media only screen and (max-width: 1210px) {
-.RatingTile2{
-    margin-right: 0;
-    margin-left: 0;
-}
-.RatingTiles{
-    justify-content: center;
-}
-.RatingTile, .RatingTile2{
-    margin-bottom: 1vh;
-}
+        justify-content: end;
+        padding-right: 5vw;
+    }
+    .discordinvite{
+        visibility: hidden;
+    }
 }

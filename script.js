@@ -1,30 +1,87 @@
-const easeOutCirc = (t) => Math.sqrt(1 - Math.pow(t - 1, 2));
-
-const animateCounter = (elementId, start, end, duration) => {
-    const counterElement = document.getElementById(elementId);
-    let startTime = null;
-
-    const step = (currentTime) => {
-        if (!startTime) startTime = currentTime;
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1);
-        const easeProgress = easeOutCirc(progress);
-        const value = Math.floor(start + (end - start) * easeProgress);
-
-        counterElement.textContent = value;
-
-        if (elapsedTime < duration) {
-            requestAnimationFrame(step);
-        } else {
-            // Add the "+" sign once the counting is done
-            counterElement.textContent = value + "+";
+function init() {
+    new SmoothScroll(document, 120, 20)
+  }
+  
+  function SmoothScroll(target, speed, smooth) {
+    if (target === document)
+      target = (document.scrollingElement
+        || document.documentElement
+        || document.body.parentNode
+        || document.body) 
+  
+    var moving = false
+    var pos = target.scrollTop
+    var frame = target === document.body
+      && document.documentElement
+      ? document.documentElement
+      : target 
+  
+    target.addEventListener('mousewheel', scrolled, { passive: false })
+    target.addEventListener('DOMMouseScroll', scrolled, { passive: false })
+  
+    function scrolled(e) {
+      e.preventDefault(); 
+  
+      var delta = normalizeWheelDelta(e)
+  
+      pos += -delta * speed
+      pos = Math.max(0, Math.min(pos, target.scrollHeight - frame.clientHeight)) 
+  
+      if (!moving) update()
+    }
+  
+    function normalizeWheelDelta(e) {
+      if (e.detail) {
+        if (e.wheelDelta)
+          return e.wheelDelta / e.detail / 40 * (e.detail > 0 ? 1 : -1) 
+        else
+          return -e.detail / 3 
+      } else
+        return e.wheelDelta / 120 
+    }
+  
+    function update() {
+      moving = true
+  
+      var delta = (pos - target.scrollTop) / smooth
+  
+      target.scrollTop += delta
+  
+      if (Math.abs(delta) > 0.5)
+        requestFrame(update)
+      else
+        moving = false
+    }
+  
+    var requestFrame = function () { // requestAnimationFrame cross browser
+      return (
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (func) {
+          window.setTimeout(func, 1000 / 50);
         }
-    };
+      );
+    }()
+  }
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    init();
+  })
 
-    requestAnimationFrame(step);
-};
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
 
-// Start the animation for each counter
-animateCounter('People', 1, 2000, 2000);
-animateCounter('Sales', 1, 200, 2500);
-animateCounter('Trust', 1, 30, 3000);
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
