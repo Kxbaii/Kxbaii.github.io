@@ -323,6 +323,9 @@ font-size: 2.3vh;
     .discordinvite{
         visibility: hidden;
     }
+   header{
+    padding-left: 2.5vh;
+   }
 }
 @media only screen and (max-width: 450px){
     nav{
