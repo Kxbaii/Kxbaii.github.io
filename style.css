@@ -5,6 +5,12 @@
     font-family: "Montserrat", sans-serif;
 
 }
+.testsection{
+    background-color: #252626;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 body{
     background-image:url(files/bg.svg);
     background-size:cover;
@@ -176,10 +182,71 @@ font-size: 2.3vh;
     justify-content: space-around;
 }
 
-#products{
-    height: 100vh;
+#stats{
     background-color: #252626;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
+
+.statistics{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+.statcard{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 1s ease, opacity 1s ease;
+    position: relative;
+}
+.statcard::before{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 30vh;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.statcard.shaded {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.statcard.shaded::before {
+    opacity: 1;
+}
+.statimg{
+    width: 10vw;
+} 
+
+.statnumber, .statdesc{
+    text-align: center;
+}
+.statnumber{
+    color: white;
+    font-size: 7vh;
+    font-weight: 600;
+}
+.statdesc{
+    color: #0097b2;
+    font-size: 2.5vh;
+    font-weight: 300;
+}
+
 
 @media only screen and (max-width: 1300px){
     nav{
@@ -253,6 +320,16 @@ font-size: 2.3vh;
         width: 90vw;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .statnumber{
+        color: white;
+        font-size: 5vh;
+        font-weight: 600;
+    }
+    .statdesc{
+        color: #0097b2;
+        font-size: 1.8vh;
+        font-weight: 300;
     }
 }
 
@@ -338,6 +415,30 @@ font-size: 2.3vh;
    header{
     padding-left: 2.5vh;
    }
+   .statistics{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: space-around;
+}
+.statcard{
+    height: 25vh;
+}
+.statnumber{
+    color: white;
+    font-size: 5.5vh;
+    font-weight: 600;
+}
+.statdesc{
+    color: #0097b2;
+    font-size: 1.8vh;
+    font-weight: 300;
+}
+.statimg{
+    width: 15vw;
+} 
 }
 @media only screen and (max-width: 450px){
     nav{
@@ -387,4 +488,25 @@ font-size: 2.3vh;
     .discordinvite{
         visibility: hidden;
     }
+    .statnumber{
+        color: white;
+        font-size: 6vh;
+        font-weight: 600;
+    }
+    .statdesc{
+        color: #0097b2;
+        font-size: 2vh;
+        font-weight: 300;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
