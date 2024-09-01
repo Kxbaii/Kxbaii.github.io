@@ -324,7 +324,7 @@ position: relative;
 .teamcardtext{
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
     width: 90%;
     margin-top: 1.5vh;
@@ -539,8 +539,8 @@ align-items: center;
     .teammember{
         width: 24vh;
     }
-    .cm{
-        width: 90%;
+    .cm, .ct{
+        width: 100%;
     }
 }
 
@@ -600,7 +600,9 @@ align-items: center;
         text-align: center;
     }
     .teammember{
-        width: 21vh;
+        width: 24vh;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
     }
 }
 
@@ -653,6 +655,11 @@ align-items: center;
 .statimg{
     width: 15vw;
 } 
+.teammember{
+    margin-top:4vh;
+}
+.cm, .cs, .mt{
+    padding-bottom: 4vh;
 }
 @media only screen and (max-width: 450px){
     nav{
