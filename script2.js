@@ -12,6 +12,34 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+document.addEventListener('scroll', function() {
+    const boxes = document.querySelectorAll('.owner');
+    const triggerBottom = window.innerHeight / 1.2;
+
+    boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+
+        if(boxTop < triggerBottom) {
+            box.classList.add('shaded');
+        } else {
+            box.classList.remove('shaded');
+        }
+    });
+});
+document.addEventListener('scroll', function() {
+    const boxes = document.querySelectorAll('.teammember');
+    const triggerBottom = window.innerHeight / 1.2;
+
+    boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+
+        if(boxTop < triggerBottom) {
+            box.classList.add('shaded');
+        } else {
+            box.classList.remove('shaded');
+        }
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     const counters = [
