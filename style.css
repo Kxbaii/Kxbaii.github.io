@@ -298,7 +298,7 @@ font-size: 2.3vh;
 margin-top: 8vh;
 opacity: 0;
 transform: translateY(100px);
-transition: transform 1s ease, opacity 1s ease;
+transition: transform 0.8s ease, opacity 0.8s ease;
 position: relative;
 }
 .memberimg{
@@ -427,7 +427,7 @@ align-items: center;
 .teammember::before{
     position: absolute;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 0.8s ease;
 }
 .teammember.shaded {
     transform: translateY(0);
