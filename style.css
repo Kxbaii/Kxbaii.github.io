@@ -276,6 +276,7 @@ font-size: 2.3vh;
     background-color: #252626;
     padding: 9vh;
     flex-direction: column;
+    padding-bottom: 20vh;
 }
 .mainteam{
     width: 100%;
@@ -370,6 +371,7 @@ align-items: center;
     width: 80vw;
     padding-bottom: 8vh;
     border-bottom: 1px solid #8a8a8a;
+    flex-wrap: wrap;
 }
 .teamdown{
     display: flex;
@@ -400,7 +402,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 26vw;
+    width: 52vh;
     padding: 2vh;
     background-color: #252626;
     border-radius: 12px;
@@ -479,6 +481,19 @@ align-items: center;
         padding-right: 5vw;
     }
 }
+@media only screen and (max-width: 1100px){
+    .owner{
+        margin-top: 5vh;
+    }
+    .mainteam{
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10vh;
+        font-size: 7vh;
+        color: #0097b2;
+    }
+}
+
 
 @media only screen and (max-width: 950px){
     nav{
@@ -520,6 +535,12 @@ align-items: center;
         color: #0097b2;
         font-size: 1.8vh;
         font-weight: 300;
+    }
+    .teammember{
+        width: 24vh;
+    }
+    .cm{
+        width: 90%;
     }
 }
 
@@ -577,6 +598,9 @@ align-items: center;
         font-size: 2vh;
         font-weight: 300;
         text-align: center;
+    }
+    .teammember{
+        width: 21vh;
     }
 }
 
