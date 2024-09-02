@@ -304,7 +304,7 @@ position: relative;
 }
 .memberimg{
     border-radius: 100%;
-    width: 6vw;
+    width: 12vh;
     margin-bottom: 1vh;
     border: 1px solid rgb(172, 172, 172);
 }
@@ -354,7 +354,7 @@ position: relative;
 }
 .teamimage{
     border-radius: 100%;
-    width: 6vw;
+    width: 12vh;
     border: 1px solid rgb(172, 172, 172);
 }
 .team{
@@ -368,7 +368,7 @@ align-items: center;
     justify-content: center;
     justify-content: space-evenly;
     align-items: center;
-    width: 80vw;
+    width: 70vw;
     padding-bottom: 8vh;
     border-bottom: 1px solid #8a8a8a;
     flex-wrap: wrap;
@@ -439,7 +439,11 @@ align-items: center;
 .teammember.shaded::before {
     opacity: 1;
 }
-
+@media only screen and (max-width:1600px){
+    .teammember{
+        width: 30vh;
+    }
+}
 @media only screen and (max-width: 1300px){
     nav{
         display: flex;
@@ -537,10 +541,19 @@ align-items: center;
         font-weight: 300;
     }
     .teammember{
-        width: 24vh;
+        width: 28vh;
     }
     .cm, .ct{
         width: 100%;
+    }
+    #teamup{
+        width: 80vw;
+    }
+    .memberimg{
+        width: 10vh;
+    }
+    .teamimage{
+        width: 10vh;
     }
 }
 
@@ -600,7 +613,7 @@ align-items: center;
         text-align: center;
     }
     .teammember{
-        width: 24vh;
+        width: 60vw;
         padding-top: 3vh;
         padding-bottom: 3vh;
     }
@@ -656,11 +669,22 @@ align-items: center;
     width: 15vw;
 } 
 .teammember{
-    margin-top:4vh;
+    margin-top:7vh;
 }
 .cm, .cs, .mt{
     padding-bottom: 4vh;
 }
+.teammember{
+    width: 70vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.memberRank{
+    font-size: 3.5vw;
+}
+.membername{
+    font-size: 4vw;
+}}
 @media only screen and (max-width: 450px){
     nav{
         display: flex;
@@ -685,6 +709,15 @@ align-items: center;
     }
     .discordinvite{
         visibility: hidden;
+    }
+    .teammember{
+        width: 60vh;
+    }
+    .memberRank{
+        font-size: 2.3vh;
+    }
+    .membername{
+        font-size: 2.5vh;
     }
 }
 @media only screen and (max-width: 400px){
