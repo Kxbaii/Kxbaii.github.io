@@ -761,6 +761,12 @@ align-items: center;
     }
 }
 
+@media only screen and (max-width:374px){
+    .mainteam{
+        font-size: 4vh;
+    }
+}
+
 
 
 
