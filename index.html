@@ -1,17 +1,173 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bliżycki portal informacyjny</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kłobuck Chaos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Lobster", sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* EKRAN POWITALNY */
+    #welcome {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      gap: 30px;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    #welcome.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #welcome h2 {
+      font-size: 40px;
+      text-align: center;
+    }
+
+    .choice-buttons {
+      display: flex;
+      gap: 40px;
+    }
+
+    .choice-buttons button {
+      font-size: 28px;
+      padding: 15px 30px;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .choice-buttons button:hover {
+      background-color: #ddd;
+    }
+
+    /* ZAWARTOŚĆ STRONY */
+    #main {
+      opacity: 0;
+      transition: opacity 1s ease;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #main.show {
+      opacity: 1;
+    }
+
+    /* DZIKA ANIMACJA */
+    @keyframes chaos {
+      0% {
+        transform: scale(1) rotate(0deg);
+        color: red;
+        text-shadow: 0 0 10px #ff0000;
+      }
+      25% {
+        transform: scale(1.2) rotate(-5deg);
+        color: lime;
+        text-shadow: 0 0 20px #00ff00;
+      }
+      50% {
+        transform: scale(0.9) rotate(5deg);
+        color: cyan;
+        text-shadow: 0 0 20px #00ffff;
+      }
+      75% {
+        transform: scale(1.3) rotate(-10deg);
+        color: magenta;
+        text-shadow: 0 0 30px #ff00ff;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        color: yellow;
+        text-shadow: 0 0 40px #ffff00;
+      }
+    }
+
+    h1 {
+      font-size: 150px;
+      width: 100vw;
+      text-align: center;
+      animation: chaos 0.6s infinite ease-in-out;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 30px;
+      animation: float 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to   { transform: translateY(-20px); }
+    }
+  </style>
 </head>
 <body>
-    <h1>Konrad smród</h1>
-    <img src="konrad1.png" alt="">
-    <<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2529.4897512193475!2d19.563306713107586!3d50.65516677248317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47173efc5acdbc05%3A0x808fd5b0fc5abe3f!2zQmxpxbx5Y2UgNCwgNDItMzIwIEJsacW8eWNl!5e0!3m2!1spl!2spl!4v1744978811276!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+  <!-- EKRAN POWITALNY -->
+  <div id="welcome">
+    <h2>Czy lubisz Kłobuck?</h2>
+    <div class="choice-buttons">
+      <button onclick="enterSite()">Tak</button>
+      <button onclick="enterSite()">Nie</button>
+    </div>
+  </div>
 
-<!---<img src="asdadasd.png" alt="">--->
+  <!-- GŁÓWNA ZAWARTOŚĆ -->
+  <div id="main">
+    <h1>Jebać kłobuck</h1>
+    <img src="Bez tytułu.png" alt="obrazek" style="width: fit-content;">
+    <audio id="bg-audio" loop>
+      <source src="./zydzibe.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function enterSite() {
+      const welcome = document.getElementById('welcome');
+      const main = document.getElementById('main');
+
+      // Znikanie ekranu powitalnego
+      welcome.classList.add('fade-out');
+
+      // Pokazanie głównej zawartości po animacji
+      setTimeout(() => {
+        welcome.style.display = 'none';
+        main.classList.add('show');
+        document.getElementById('bg-audio').play().catch((e) => {
+          console.log("Autoplay blocked: ", e);
+        });
+      }, 1000); // musi pasować do transition: 1s
+    }
+  </script>
+
 </body>
 </html>
